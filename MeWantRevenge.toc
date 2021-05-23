@@ -1,0 +1,6 @@
+## Interface: 80501
+## Title: MeWantRevenge
+## Author: Kevin Pruvost
+## Version: 1.0
+
+main.lua
