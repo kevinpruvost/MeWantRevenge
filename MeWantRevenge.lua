@@ -18,42 +18,42 @@ local AceGUI = LibStub("AceGUI-3.0")
 
 local guids = {}
 --------- CreateFrame 4th argument can be a comma-separated list of XML templates!
-local window = AceGUI:Create("Frame")
-window:SetTitle("MeWantRevenge")
-window:SetStatusText("MeWantRevenge Container Frame")
+MWRWindow = AceGUI:Create("Frame")
+MWRWindow:SetTitle("MeWantRevenge")
+MWRWindow:SetStatusText("MeWantRevenge Container Frame")
 
 ------------------------------------------------------
 -- On Window Load
 function MeWantRevenge_OnLoad()
     print("Loading MeWantRevenge...")
 
-    function window:NAME_PLATE_UNIT_ADDED(unit)
+    function MWRWindow:NAME_PLATE_UNIT_ADDED(unit)
         guids[UnitGUID(unit)] = unit
     end
     
-    function window:UNIT_PHASE(unit)
+    function MWRWindow:UNIT_PHASE(unit)
         print("phase_add ", unit)
     end
     
-    function window:UNIT_TARGETABLE_CHANGED(unit)
+    function MWRWindow:UNIT_TARGETABLE_CHANGED(unit)
         print("targetable_added ", unit)
     end
     
-    function window:NAME_PLATE_UNIT_REMOVED(unit)
+    function MWRWindow:NAME_PLATE_UNIT_REMOVED(unit)
         guids[UnitGUID(unit)] = nil
     end
     
-    window:SetScript("OnEvent", function(f, event, ...)
+    MWRWindow:SetScript("OnEvent", function(f, event, ...)
         f[event](f, ...)
     end)
     
-    window:RegisterEvent("NAME_PLATE_UNIT_ADDED")
-    window:RegisterEvent("NAME_PLATE_UNIT_REMOVED")
-    window:RegisterEvent("UNIT_PHASE")
-    window:RegisterEvent("UNIT_TARGETABLE_CHANGED")
+    MWRWindow:RegisterEvent("NAME_PLATE_UNIT_ADDED")
+    MWRWindow:RegisterEvent("NAME_PLATE_UNIT_REMOVED")
+    MWRWindow:RegisterEvent("UNIT_PHASE")
+    MWRWindow:RegisterEvent("UNIT_TARGETABLE_CHANGED")
     
     print("MeWantRevenge loaded.")
 end
 
-window:Show()
+MWRWindow:Hide()
 -------------------------------MeWantRevenge Code-------------------------------]]

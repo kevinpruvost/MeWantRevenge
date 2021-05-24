@@ -7,16 +7,32 @@
     Maybe some useful user-oriented commands will be added in the future.
 ]]
 
+local function MeWantRevenge_Execute()
+    if MWRWindow:IsShown() then
+        MWRWindow:Hide()
+    else
+        MWRWindow:Show()
+    end
+end
+
+local function MeWantRevenge_Help(...)
+    print("HELP!!!!1!!!1!!!")
+end
+
+
 ---------------------------------------------------------------
 -- MeWantRevenge_Command()
 -- A global dictionary is created to optimize commands access.
 MeWantRevenge_Command_CommandsDictionary = {
-    ["HELP"] = MeWantRevenge_Help,
-    ["OTHER"] = MeWantRevenge_Help
+    [''] = MeWantRevenge_Execute,
+    ['HELP'] = MeWantRevenge_Help,
+    ['OTHER'] = MeWantRevenge_Help
 }
 -- The function itself
-function MeWantRevenge_Command(arg1, ...)
-	print("Command executed: "..arg1);
+local function MeWantRevenge_Command(arg1)
+    if arg1 == nil then
+        arg1 = ''
+    end
 	local Command = string.upper(arg1);
 	local DescriptionOffset = string.find(arg1,"%s",1);
 	local Description = nil;
@@ -26,13 +42,10 @@ function MeWantRevenge_Command(arg1, ...)
 		Description = tostring(string.sub(arg1, DescriptionOffset + 1));
 	end
 	
-	print("Command executed: "..Command);
-	
-    if #arg >= 0 then
-        MeWantRevenge_Command_CommandsDictionary[Command](arg)
-    else
-        MeWantRevenge_Command_CommandsDictionary[Command]()
-    end
+    print("Executing Command : " .. Command);
+
+    MeWantRevenge_Command_CommandsDictionary[Command]()
+    print("Command executed successfully.")
 end
 
 SLASH_ME_WANT_REVENGE1 = "/mwr"
