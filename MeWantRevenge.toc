@@ -2,5 +2,8 @@
 ## Title: MeWantRevenge
 ## Author: Kevin Pruvost
 ## Version: 1.0
+## DefaultState: enabled
+## SavedVariables: AuraTrackerDB
 
-main.lua
+# XMl files
+MeWantRevenge.xml

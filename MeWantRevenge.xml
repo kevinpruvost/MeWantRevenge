@@ -1,0 +1,5 @@
+<Ui>
+	<Include file="libs\main.xml"/>
+
+	<Script file="MeWantRevenge.lua"/>
+</Ui>
