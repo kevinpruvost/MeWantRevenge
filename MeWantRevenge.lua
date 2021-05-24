@@ -1,7 +1,7 @@
 --------------------------DEBUG-------------------------------[[
 -- Aliases
 SLASH_FRAMESTK1 = "/fs"
-SlashCmdList.FRAMESTK = function ()
+SlashCmdList["FRAMESTK"] = function ()
     LoadAddOn('Blizzard_DebugTools')    
     FrameStackTooltip_Toggle()    
 end
