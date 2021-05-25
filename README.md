@@ -8,6 +8,12 @@
   </b>
 </p>
 
-# Description
+# Description 📖
 
-WoW addon giving the ability to blacklist enemy players to gather an online list linked between players. So that the addon can ping the blacklisted players when encountered later.
+World of Warcraft addon which gives the ability to blacklist enemy players to gather an online list linked between contacts.
+
+So that the addon can ping the blacklisted players when encountered later for all players.
+
+# Installation 🧰
+
+# Documentation 📚
