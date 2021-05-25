@@ -18,9 +18,29 @@ local AceGUI = LibStub("AceGUI-3.0")
 
 local guids = {}
 --------- CreateFrame 4th argument can be a comma-separated list of XML templates!
-MWRWindow = AceGUI:Create("Frame")
+MWRWindow = AceGUI:Create("Frame", nil, UIParent)
 MWRWindow:SetTitle("MeWantRevenge")
 MWRWindow:SetStatusText("MeWantRevenge Container Frame")
+
+local logo = AceGUI:Create("Label")
+logo:SetImage("Interface\\Addons\\MeWantRevenge\\resources\\logo.tga")
+logo:SetImageSize(150, 150)
+local egg = MWRWindow:AddChild(logo)
+print(egg)
+print(logo:GetPoint())
+
+local editbox = AceGUI:Create("EditBox")
+editbox:SetLabel("Insert text:")
+editbox:SetWidth(200)
+MWRWindow:AddChild(editbox)
+
+local ColorPicker = AceGUI:Create("ColorPicker")
+MWRWindow:AddChild(ColorPicker)
+
+local slider = AceGUI:Create("Slider")
+slider:SetWidth(200)
+slider:SetHeight(200)
+MWRWindow:AddChild(slider)
 
 ------------------------------------------------------
 -- On Window Load

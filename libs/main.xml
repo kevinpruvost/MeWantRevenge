@@ -1,6 +1,7 @@
 <Ui>
 	<!--XML includes-->
 	<Include file="AceGUI-3.0\AceGUI-3.0.xml"/>
+    <Include file="Sushi-3.1\Sushi-3.1.xml"/>
 
 	<!--LUA includes-->
 	<Script file="LibStub\LibStub.lua"/>
