@@ -20,7 +20,8 @@ local guids = {}
 --------- CreateFrame 4th argument can be a comma-separated list of XML templates!
 MWRWindow = AceGUI:Create("Frame", nil, UIParent)
 MWRWindow:SetTitle("MeWantRevenge")
-MWRWindow:SetStatusText("MeWantRevenge Container Frame")
+MWRWindow:SetWidth(300)
+MWRWindow:SetHeight(300)
 
 local logo = AceGUI:Create("Label")
 logo:SetImage("Interface\\Addons\\MeWantRevenge\\resources\\logo.tga")
