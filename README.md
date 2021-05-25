@@ -1,7 +1,7 @@
 # MeWantRevenge
 
 <p align="center">
-  <img src="https://github.com/kevinpruvost/MeWantRevenge/blob/main/resources/logo.png" width="300"/><br/><br/>
+  <img src="/resources/logo.png" width="300"/><br/><br/>
   <b>
     :rage4: Want revenge ?!!!1!!1! :rage4: <br/><br/>
     😊 Take addon 😊
@@ -9,6 +9,10 @@
 </p>
 
 # Description 📖
+
+<p align="center">
+  <img src="/resources/instructor.png" width="300" />
+</p>
 
 World of Warcraft addon which gives the ability to blacklist enemy players to gather an online list linked between contacts.
 
