@@ -1,7 +1,7 @@
 # MeWantRevenge
 
 <p align="center">
-  <img src="/resources/logo.tga" width="300"/><br/><br/>
+  <img src="/resources/logo.png" width="300"/><br/><br/>
   <b>
     :rage4: Want revenge ?!!!1!!1! :rage4: <br/><br/>
     😊 Take addon 😊
