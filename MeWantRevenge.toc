@@ -3,7 +3,20 @@
 ## Author: Kevin Pruvost
 ## Version: 1.0
 ## DefaultState: enabled
-## SavedVariables: AuraTrackerDB
+## SavedVariables: MeWantRevengeDB
+## SavedVariablesPerCharacter: MeWantRevengePerCharDB
 
-# XMl files
+##################################
+# Embedding
 MeWantRevenge.xml
+
+##################################
+# Localization files
+Locales\MeWantRevenge-enUS.lua
+Locales\MeWantRevenge-frFR.lua
+
+##################################
+# Main code
+MeWantRevengeOptions.lua
+MeWantRevenge.lua
+MeWantRevengeCommand.lua

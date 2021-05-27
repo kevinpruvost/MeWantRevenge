@@ -1,6 +1,4 @@
 <Ui>
-	<Include file="libs\main.xml"/>
-
-	<Script file="MeWantRevenge.lua"/>
-	<Script file="MeWantRevengeCommand.lua"/>
+	<!--Libraries-->
+	<Include file="Libs\main.xml"/>
 </Ui>

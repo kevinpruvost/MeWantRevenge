@@ -8,10 +8,10 @@
 ]]
 
 local function MeWantRevenge_Execute()
-    if MWRWindow:IsShown() then
-        MWRWindow:Hide()
+    if MeWantRevengeWindow:IsShown() then
+        MeWantRevengeWindow:Hide()
     else
-        MWRWindow:Show()
+        MeWantRevengeWindow:Show()
     end
 end
 
@@ -48,6 +48,6 @@ local function MeWantRevenge_Command(arg1)
     print("Command executed successfully.")
 end
 
-SLASH_ME_WANT_REVENGE1 = "/mwr"
+SLASH_ME_WANT_REVENGE1 = "/MeWantRevenge"
 SLASH_ME_WANT_REVENGE2 = "/MeWantRevenge"
 SlashCmdList["ME_WANT_REVENGE"] = MeWantRevenge_Command;
