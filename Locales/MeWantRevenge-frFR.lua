@@ -2,12 +2,14 @@ local L = LibStub("AceLocale-3.0"):NewLocale("MeWantRevenge", "frFR")
 if not L then return end
 -- TOC Note: "Détecte et vous avertit de la présence de joueurs ennemis à proximité."
 
+----------------------------------------------------------------------------------------------------
 -- Configuration
 L["MeWantRevenge"] = "MeWantRevenge"
 L["Version"] = "Version"
 L["MeWantRevenge Option"] = "MeWantRevenge"
 L["Profiles"] = "Profils"
 
+----------------------------------------------------------------------------------------------------
 -- About
 L["About"] = "Info"
 L["MeWantRevengeDescription1"] = [[
@@ -24,7 +26,7 @@ Affiche tous les ennemis qui ont été détectés au cours de la dernière heure
 Les joueurs qui sont ajoutés à la liste d'ignorés ne seront pas signalés par MeWantRevenge. Vous pouvez ajouter et supprimer des joueurs de cette liste en utilisant le menu déroulant du bouton ou en maintenant la touche Ctrl enfoncée tout en cliquant sur le bouton.
 
 |cffffd000Liste des Tuer à vue|cffffffff
-Les joueurs de votre liste \"Tuer à vue\" déclenchent une alarme lorsqu'ils sont détectés. Vous pouvez ajouter et supprimer des joueurs de cette liste en utilisant le menu déroulant du bouton ou en maintenant la touche Maj enfoncée tout en cliquant sur le bouton.
+Les joueurs de votre liste "Tuer à vue" déclenchent une alarme lorsqu'ils sont détectés. Vous pouvez ajouter et supprimer des joueurs de cette liste en utilisant le menu déroulant du bouton ou en maintenant la touche Maj enfoncée tout en cliquant sur le bouton.
 
 Le menu déroulant peut également être utilisé pour définir les raisons pour lesquelles vous avez ajouté quelqu'un à la liste "Tuer à vue". Si vous voulez entrer un raison spécifique qui n'est pas dans la liste, utilisez le bouton "Entrez votre propre raison ..." dans la liste "Autre".
 
@@ -37,6 +39,7 @@ If enabled, this button will be located on the enemy players target frame. Click
 |cffffd000Auteur: Slipjack|cffffffff
 ]]
 
+----------------------------------------------------------------------------------------------------
 -- General Settings
 L["GeneralSettings"] = "Configuration générale"
 L["GeneralSettingsDescription"] = [[
@@ -73,6 +76,7 @@ L["Chamber of Heart"] = "Chambre du Cœur"
 L["Hall of Ancient Paths"] = "Hall des Voies antiques"
 L["Sanctum of the Sages"] = "Sanctum des Sages"
 
+----------------------------------------------------------------------------------------------------
 -- Display
 L["DisplayOptions"] = "Affichage"
 L["DisplayOptionsDescription"] = [[
@@ -125,8 +129,9 @@ L["SelectFontDescription"] = "Sélectionnez une police pour la fenêtre MeWantRe
 L["RowHeight"] = "Sélectionner la hauteur de ligne"
 L["RowHeightDescription"] = "Sélectionnez la hauteur de ligne pour la fenêtre MeWantRevenge."
 L["Texture"] = "Texture"
-L["TextureDescription"] = "Sélectionner une texture pour la fenêtre d'espionnage"
+L["TextureDescription"] = "Sélectionner une texture pour la fenêtre de MeWantRevenge"
 
+----------------------------------------------------------------------------------------------------
 -- Alerts
 L["AlertOptions"] = "Alertes"
 L["AlertOptionsDescription"] = [[
@@ -176,6 +181,7 @@ L["OnlySoundKoSDescription"] = "Choisissez cette option pour entendre les alerte
 L["StopAlertsOnTaxi"] = "Désactiver les alertes lors de l'utilisation d'une trajectoire de vol"
 L["StopAlertsOnTaxiDescription"] = "Arrêtez tous les nouveaux avertissements et avertissements lorsque vous utilisez une trajectoire de vol."
 
+----------------------------------------------------------------------------------------------------
 -- Nearby List
 L["ListOptions"] = "Liste à proximité"
 L["ListOptionsDescription"] = [[
@@ -199,6 +205,7 @@ L["ShowNearbyListDescription"] = "Choisir cette option pour afficher la liste Pr
 L["PrioritiseKoS"] = "Prioriser les joueurs ennemis Tuer à vue dans la liste des joueurs à proximité"
 L["PrioritiseKoSDescription"] = "Choisissez cette option pour toujours afficher les joueurs ennemis Tuer à vue en premier dans la liste des ennemis proches."
 
+----------------------------------------------------------------------------------------------------
 -- Map
 L["MapOptions"] = "Carte"
 L["MapOptionsDescription"] = [[
@@ -221,6 +228,7 @@ L["LimitSameZoneDescription"] = "N'affiche que les ennemis détectés dans la ca
 L["LimitSameContinent"] = "Même continent"
 L["LimitSameContinentDescription"] = "N'affiche que les ennemis détectés dans la carte si vous êtes sur le même continent."
 
+----------------------------------------------------------------------------------------------------
 -- Data Management
 L["DataOptions"] = "Gestion des données"
 L["DataOptionsDescription"] = [[
@@ -250,6 +258,7 @@ L["UseDataDescription"] = "Choisir cette option pour utiliser les données colle
 L["ShareKOSBetweenCharacters"] = "Partagez des joueurs Tuer à vue entre vos personnages"
 L["ShareKOSBetweenCharactersDescription"] = "Choisir cette option pour partager les joueurs présent dans votre liste des Tuer à vue avec les autres personnages que vous jouez sur le même serveur et la même faction."
 
+----------------------------------------------------------------------------------------------------
 -- Commands
 L["SlashCommand"] = "Commande Slash"
 L["MeWantRevengeSlashDescription"] = "Ces boutons exécutent les mêmes fonctions que celles de la commande /MeWantRevenge"
@@ -273,12 +282,14 @@ L["IgnoreDescription"] = "Ajouter/retirer un joueur à/de la liste ingnore."
 L["Test"] = "Test"
 L["TestDescription"] = "Affiche un avertissement afin que vous puissiez le repositionner."
 
+----------------------------------------------------------------------------------------------------
 -- Lists
 L["Nearby"] = "Proche"
 L["LastHour"] = "Dernière heure"
 L["Ignore"] = "Ignorer"
 L["KillOnSight"] = "Tuer à vue"
 
+----------------------------------------------------------------------------------------------------
 --Stats
 L["Won"] = "Victoire"
 L["Lost"] = "Défaite"
@@ -292,6 +303,7 @@ L["Reason"] = "Raison"
 L["HonorKills"] = "l'honneur tue"
 L["PvPDeaths"] = "Décès JcJ"
 
+----------------------------------------------------------------------------------------------------
 -- Output Messages
 L["VersionCheck"] = "|cffc41e3aAttention! La mauvaise version de MeWantRevenge est installée. Supprimez cette version et installez MeWantRevenge Classic."
 L["MeWantRevengeEnabled"] = "|cff9933ffAddon MeWantRevenge activé"
@@ -322,7 +334,7 @@ L["MinutesAgo"] = "minutes"
 L["HoursAgo"] = "heures"
 L["DaysAgo"] = "jours"
 L["Close"] = "Fermer"
-L["CloseDescription"] = "|cffffffffMasque la fenêtre Espion, elle réapparaîtra lorsque le prochain joueur ennemi sera détecté."
+L["CloseDescription"] = "|cffffffffMasque la fenêtre MeWantRevenge, elle réapparaîtra lorsque le prochain joueur ennemi sera détecté."
 L["Left/Right"] = "Gauche/Droite"
 L["Left/RightDescription"] = "|cffffffffNavigue entre les listes A proximité, Dernière heure, Ignore et Tuer à vue"
 L["Clear"] = "Effacer"

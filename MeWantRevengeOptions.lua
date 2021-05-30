@@ -103,7 +103,7 @@ MeWantRevenge.options = {
 						MeWantRevenge:ZoneChangedEvent()
 					end,
 				},
---[[				EnabledInArenas = {
+				EnabledInArenas = {
 					name = L["EnabledInArenas"],
 					desc = L["EnabledInArenasDescription"],
 					type = "toggle",
@@ -117,7 +117,7 @@ MeWantRevenge.options = {
 						MeWantRevenge:ZoneChangedEvent()
 					end,
 				},
-				EnabledInWintergrasp = {
+--[[				EnabledInWintergrasp = {
 					name = L["EnabledInWintergrasp"],
 					desc = L["EnabledInWintergraspDescription"],
 					type = "toggle",
@@ -162,8 +162,8 @@ MeWantRevenge.options = {
 						["Gadgetzan"] = L["Gadgetzan"],
 						["Ratchet"] = L["Ratchet"],
 						["The Salty Sailor Tavern"] = L["The Salty Sailor Tavern"],
---						["Shattrath City"] = L["Shattrath City"],
---						["Area 52"] = L["Area 52"],
+						["Shattrath City"] = L["Shattrath City"],
+						["Area 52"] = L["Area 52"],
 --						["Dalaran"] = L["Dalaran"],
 --						["Dalaran (Northrend)"] = L["Dalaran (Northrend)"],
 --						["Bogpaddle"] = L["Bogpaddle"],
@@ -1504,140 +1504,13 @@ function MeWantRevenge:CheckDatabase()
 	if not MeWantRevengePerCharDB.KOSData then
 		MeWantRevengePerCharDB.KOSData = {}
 	end
-    print("quoi", MeWantRevengeDB)
 	if MeWantRevengeDB.kosData == nil then MeWantRevengeDB.kosData = {} end
-    print("quoi0", MeWantRevengeDB)
 	if MeWantRevengeDB.kosData[MeWantRevenge.RealmName] == nil then MeWantRevengeDB.kosData[MeWantRevenge.RealmName] = {} end
-    print("quoi1", MeWantRevengeDB)
 	if MeWantRevengeDB.kosData[MeWantRevenge.RealmName][MeWantRevenge.FactionName] == nil then MeWantRevengeDB.kosData[MeWantRevenge.RealmName][MeWantRevenge.FactionName] = {} end
-    print("quoi2", MeWantRevengeDB)
 	if MeWantRevengeDB.kosData[MeWantRevenge.RealmName][MeWantRevenge.FactionName][MeWantRevenge.CharacterName] == nil then MeWantRevengeDB.kosData[MeWantRevenge.RealmName][MeWantRevenge.FactionName][MeWantRevenge.CharacterName] = {} end
-    print("quoi3")
 	if MeWantRevengeDB.removeKOSData == nil then MeWantRevengeDB.removeKOSData = {} end
 	if MeWantRevengeDB.removeKOSData[MeWantRevenge.RealmName] == nil then MeWantRevengeDB.removeKOSData[MeWantRevenge.RealmName] = {} end
 	if MeWantRevengeDB.removeKOSData[MeWantRevenge.RealmName][MeWantRevenge.FactionName] == nil then MeWantRevengeDB.removeKOSData[MeWantRevenge.RealmName][MeWantRevenge.FactionName] = {} end
-    print("quoi")
---[[	if MeWantRevenge.db.profile == nil then MeWantRevenge.db.profile = Default_Profile.profile end
-	if MeWantRevenge.db.profile.Colors == nil then MeWantRevenge.db.profile.Colors = Default_Profile.profile.Colors end
-	if MeWantRevenge.db.profile.Colors["Window"] == nil then MeWantRevenge.db.profile.Colors["Window"] = Default_Profile.profile.Colors["Window"] end
-	if MeWantRevenge.db.profile.Colors["Window"]["Title"] == nil then MeWantRevenge.db.profile.Colors["Window"]["Title"] = Default_Profile.profile.Colors["Window"]["Title"] end
-	if MeWantRevenge.db.profile.Colors["Window"]["Background"] == nil then MeWantRevenge.db.profile.Colors["Window"]["Background"] = Default_Profile.profile.Colors["Window"]["Background"] end
-	if MeWantRevenge.db.profile.Colors["Window"]["Title Text"] == nil then MeWantRevenge.db.profile.Colors["Window"]["Title Text"] = Default_Profile.profile.Colors["Window"]["Title Text"] end
-	if MeWantRevenge.db.profile.Colors["Other Windows"] == nil then MeWantRevenge.db.profile.Colors["Other Windows"] = Default_Profile.profile.Colors["Other Windows"] end
-	if MeWantRevenge.db.profile.Colors["Other Windows"]["Title"] == nil then MeWantRevenge.db.profile.Colors["Other Windows"]["Title"] = Default_Profile.profile.Colors["Other Windows"]["Title"] end
-	if MeWantRevenge.db.profile.Colors["Other Windows"]["Background"] == nil then MeWantRevenge.db.profile.Colors["Other Windows"]["Background"] = Default_Profile.profile.Colors["Other Windows"]["Background"] end
-	if MeWantRevenge.db.profile.Colors["Other Windows"]["Title Text"] == nil then MeWantRevenge.db.profile.Colors["Other Windows"]["Title Text"] = Default_Profile.profile.Colors["Other Windows"]["Title Text"] end
-	if MeWantRevenge.db.profile.Colors["Bar"] == nil then MeWantRevenge.db.profile.Colors["Bar"] = Default_Profile.profile.Colors["Bar"] end
-	if MeWantRevenge.db.profile.Colors["Bar"]["Bar Text"] == nil then MeWantRevenge.db.profile.Colors["Bar"]["Bar Text"] = Default_Profile.profile.Colors["Bar"]["Bar Text"] end
-	if MeWantRevenge.db.profile.Colors["Warning"] == nil then MeWantRevenge.db.profile.Colors["Warning"] = Default_Profile.profile.Colors["Warning"] end
-	if MeWantRevenge.db.profile.Colors["Warning"]["Warning Text"] == nil then MeWantRevenge.db.profile.Colors["Warning"]["Warning Text"] = Default_Profile.profile.Colors["Warning"]["Warning Text"] end
-	if MeWantRevenge.db.profile.Colors["Tooltip"] == nil then MeWantRevenge.db.profile.Colors["Tooltip"] = Default_Profile.profile.Colors["Tooltip"] end
-	if MeWantRevenge.db.profile.Colors["Tooltip"]["Title Text"] == nil then MeWantRevenge.db.profile.Colors["Tooltip"]["Title Text"] = Default_Profile.profile.Colors["Tooltip"]["Title Text"] end
-	if MeWantRevenge.db.profile.Colors["Tooltip"]["Details Text"] == nil then MeWantRevenge.db.profile.Colors["Tooltip"]["Details Text"] = Default_Profile.profile.Colors["Tooltip"]["Details Text"] end
-	if MeWantRevenge.db.profile.Colors["Tooltip"]["Location Text"] == nil then MeWantRevenge.db.profile.Colors["Tooltip"]["Location Text"] = Default_Profile.profile.Colors["Tooltip"]["Location Text"] end
-	if MeWantRevenge.db.profile.Colors["Tooltip"]["Reason Text"] == nil then MeWantRevenge.db.profile.Colors["Tooltip"]["Reason Text"] = Default_Profile.profile.Colors["Tooltip"]["Reason Text"] end
-	if MeWantRevenge.db.profile.Colors["Alert"] == nil then MeWantRevenge.db.profile.Colors["Alert"] = Default_Profile.profile.Colors["Alert"] end
-	if MeWantRevenge.db.profile.Colors["Alert"]["Background"] == nil then MeWantRevenge.db.profile.Colors["Alert"]["Background"] = Default_Profile.profile.Colors["Alert"]["Background"] end
-	if MeWantRevenge.db.profile.Colors["Alert"]["Icon"] == nil then MeWantRevenge.db.profile.Colors["Alert"]["Icon"] = Default_Profile.profile.Colors["Alert"]["Icon"] end
-	if MeWantRevenge.db.profile.Colors["Alert"]["KOS Border"] == nil then MeWantRevenge.db.profile.Colors["Alert"]["KOS Border"] = Default_Profile.profile.Colors["Alert"]["KOS Border"] end
-	if MeWantRevenge.db.profile.Colors["Alert"]["KOS Text"] == nil then MeWantRevenge.db.profile.Colors["Alert"]["KOS Text"] = Default_Profile.profile.Colors["Alert"]["KOS Text"] end
-	if MeWantRevenge.db.profile.Colors["Alert"]["KOS Guild Border"] == nil then MeWantRevenge.db.profile.Colors["Alert"]["KOS Guild Border"] = Default_Profile.profile.Colors["Alert"]["KOS Guild Border"] end
-	if MeWantRevenge.db.profile.Colors["Alert"]["KOS Guild Text"] == nil then MeWantRevenge.db.profile.Colors["Alert"]["KOS Guild Text"] = Default_Profile.profile.Colors["Alert"]["KOS Guild Text"] end
-	if MeWantRevenge.db.profile.Colors["Alert"]["Stealth Border"] == nil then MeWantRevenge.db.profile.Colors["Alert"]["Stealth Border"] = Default_Profile.profile.Colors["Alert"]["Stealth Border"] end
-	if MeWantRevenge.db.profile.Colors["Alert"]["Stealth Text"] == nil then MeWantRevenge.db.profile.Colors["Alert"]["Stealth Text"] = Default_Profile.profile.Colors["Alert"]["Stealth Text"] end
-	if MeWantRevenge.db.profile.Colors["Alert"]["Away Border"] == nil then MeWantRevenge.db.profile.Colors["Alert"]["Away Border"] = Default_Profile.profile.Colors["Alert"]["Away Border"] end
-	if MeWantRevenge.db.profile.Colors["Alert"]["Away Text"] == nil then MeWantRevenge.db.profile.Colors["Alert"]["Away Text"] = Default_Profile.profile.Colors["Alert"]["Away Text"] end
-	if MeWantRevenge.db.profile.Colors["Alert"]["Location Text"] == nil then MeWantRevenge.db.profile.Colors["Alert"]["Location Text"] = Default_Profile.profile.Colors["Alert"]["Location Text"] end
-	if MeWantRevenge.db.profile.Colors["Alert"]["Name Text"] == nil then MeWantRevenge.db.profile.Colors["Alert"]["Name Text"] = Default_Profile.profile.Colors["Alert"]["Name Text"] end
-	if MeWantRevenge.db.profile.Colors["Class"] == nil then MeWantRevenge.db.profile.Colors["Class"] = Default_Profile.profile.Colors["Class"] end
-	if MeWantRevenge.db.profile.Colors["Class"]["HUNTER"] == nil then MeWantRevenge.db.profile.Colors["Class"]["HUNTER"] = Default_Profile.profile.Colors["Class"]["HUNTER"] end
-	if MeWantRevenge.db.profile.Colors["Class"]["WARLOCK"] == nil then MeWantRevenge.db.profile.Colors["Class"]["WARLOCK"] = Default_Profile.profile.Colors["Class"]["WARLOCK"] end
-	if MeWantRevenge.db.profile.Colors["Class"]["PRIEST"] == nil then MeWantRevenge.db.profile.Colors["Class"]["PRIEST"] = Default_Profile.profile.Colors["Class"]["PRIEST"] end
-	if MeWantRevenge.db.profile.Colors["Class"]["PALADIN"] == nil then MeWantRevenge.db.profile.Colors["Class"]["PALADIN"] = Default_Profile.profile.Colors["Class"]["PALADIN"] end
-	if MeWantRevenge.db.profile.Colors["Class"]["MAGE"] == nil then MeWantRevenge.db.profile.Colors["Class"]["MAGE"] = Default_Profile.profile.Colors["Class"]["MAGE"] end
-	if MeWantRevenge.db.profile.Colors["Class"]["ROGUE"] == nil then MeWantRevenge.db.profile.Colors["Class"]["ROGUE"] = Default_Profile.profile.Colors["Class"]["ROGUE"] end
-	if MeWantRevenge.db.profile.Colors["Class"]["DRUID"] == nil then MeWantRevenge.db.profile.Colors["Class"]["DRUID"] = Default_Profile.profile.Colors["Class"]["DRUID"] end
-	if MeWantRevenge.db.profile.Colors["Class"]["SHAMAN"] == nil then MeWantRevenge.db.profile.Colors["Class"]["SHAMAN"] = Default_Profile.profile.Colors["Class"]["SHAMAN"] end
-	if MeWantRevenge.db.profile.Colors["Class"]["WARRIOR"] == nil then MeWantRevenge.db.profile.Colors["Class"]["WARRIOR"] = Default_Profile.profile.Colors["Class"]["WARRIOR"] end
---	if MeWantRevenge.db.profile.Colors["Class"]["DEATHKNIGHT"] == nil then MeWantRevenge.db.profile.Colors["Class"]["DEATHKNIGHT"] = Default_Profile.profile.Colors["Class"]["DEATHKNIGHT"] end
---	if MeWantRevenge.db.profile.Colors["Class"]["MONK"] == nil then MeWantRevenge.db.profile.Colors["Class"]["MONK"] = Default_Profile.profile.Colors["Class"]["MONK"] end
---	if MeWantRevenge.db.profile.Colors["Class"]["DEMONHUNTER"] == nil then MeWantRevenge.db.profile.Colors["Class"]["DEMONHUNTER"] = Default_Profile.profile.Colors["Class"]["DEMONHUNTER"] end	
-	if MeWantRevenge.db.profile.Colors["Class"]["PET"] == nil then MeWantRevenge.db.profile.Colors["Class"]["PET"] = Default_Profile.profile.Colors["Class"]["PET"] end
-	if MeWantRevenge.db.profile.Colors["Class"]["MOB"] == nil then MeWantRevenge.db.profile.Colors["Class"]["MOB"] = Default_Profile.profile.Colors["Class"]["MOB"] end
-	if MeWantRevenge.db.profile.Colors["Class"]["UNKNOWN"] == nil then MeWantRevenge.db.profile.Colors["Class"]["UNKNOWN"] = Default_Profile.profile.Colors["Class"]["UNKNOWN"] end
-	if MeWantRevenge.db.profile.Colors["Class"]["HOSTILE"] == nil then MeWantRevenge.db.profile.Colors["Class"]["HOSTILE"] = Default_Profile.profile.Colors["Class"]["HOSTILE"] end
-	if MeWantRevenge.db.profile.Colors["Class"]["UNGROUPED"] == nil then MeWantRevenge.db.profile.Colors["Class"]["UNGROUPED"] = Default_Profile.profile.Colors["Class"]["UNGROUPED"] end
-	if MeWantRevenge.db.profile.MainWindow == nil then MeWantRevenge.db.profile.MainWindow = Default_Profile.profile.MainWindow end
-	if MeWantRevenge.db.profile.MainWindow.Buttons == nil then MeWantRevenge.db.profile.MainWindow.Buttons = Default_Profile.profile.MainWindow.Buttons end
-	if MeWantRevenge.db.profile.MainWindow.Buttons.ClearButton == nil then MeWantRevenge.db.profile.MainWindow.Buttons.ClearButton = Default_Profile.profile.MainWindow.Buttons.ClearButton end
-	if MeWantRevenge.db.profile.MainWindow.Buttons.LeftButton == nil then MeWantRevenge.db.profile.MainWindow.Buttons.LeftButton = Default_Profile.profile.MainWindow.Buttons.LeftButton end
-	if MeWantRevenge.db.profile.MainWindow.Buttons.RightButton == nil then MeWantRevenge.db.profile.MainWindow.Buttons.RightButton = Default_Profile.profile.MainWindow.Buttons.RightButton end
-	if MeWantRevenge.db.profile.MainWindow.RowHeight == nil then MeWantRevenge.db.profile.MainWindow.RowHeight = Default_Profile.profile.MainWindow.RowHeight end
-	if MeWantRevenge.db.profile.MainWindow.RowSpacing == nil then MeWantRevenge.db.profile.MainWindow.RowSpacing = Default_Profile.profile.MainWindow.RowSpacing end
-	if MeWantRevenge.db.profile.MainWindow.TextHeight == nil then MeWantRevenge.db.profile.MainWindow.TextHeight = Default_Profile.profile.MainWindow.TextHeight end
-	if MeWantRevenge.db.profile.MainWindow.AutoHide == nil then MeWantRevenge.db.profile.MainWindow.AutoHide = Default_Profile.profile.MainWindow.AutoHide end
-	if MeWantRevenge.db.profile.MainWindow.BarText == nil then MeWantRevenge.db.profile.MainWindow.BarText = Default_Profile.profile.MainWindow.BarText end
-	if MeWantRevenge.db.profile.MainWindow.BarText.RankNum == nil then MeWantRevenge.db.profile.MainWindow.BarText.RankNum = Default_Profile.profile.MainWindow.BarText.RankNum end
-	if MeWantRevenge.db.profile.MainWindow.BarText.PerSec == nil then MeWantRevenge.db.profile.MainWindow.BarText.PerSec = Default_Profile.profile.MainWindow.BarText.PerSec end
-	if MeWantRevenge.db.profile.MainWindow.BarText.Percent == nil then MeWantRevenge.db.profile.MainWindow.BarText.Percent = Default_Profile.profile.MainWindow.BarText.Percent end
-	if MeWantRevenge.db.profile.MainWindow.BarText.NumFormat == nil then MeWantRevenge.db.profile.MainWindow.BarText.NumFormat = Default_Profile.profile.MainWindow.BarText.NumFormat end
-	if MeWantRevenge.db.profile.MainWindow.Position == nil then MeWantRevenge.db.profile.MainWindow.Position = Default_Profile.profile.MainWindow.Position end
-	if MeWantRevenge.db.profile.MainWindow.Position.x == nil then MeWantRevenge.db.profile.MainWindow.Position.x = Default_Profile.profile.MainWindow.Position.x end
-	if MeWantRevenge.db.profile.MainWindow.Position.y == nil then MeWantRevenge.db.profile.MainWindow.Position.y = Default_Profile.profile.MainWindow.Position.y end
-	if MeWantRevenge.db.profile.MainWindow.Position.w == nil then MeWantRevenge.db.profile.MainWindow.Position.w = Default_Profile.profile.MainWindow.Position.w end
-	if MeWantRevenge.db.profile.MainWindow.Position.h == nil then MeWantRevenge.db.profile.MainWindow.Position.h = Default_Profile.profile.MainWindow.Position.h end
-	if MeWantRevenge.db.profile.AlertWindowNameSize == nil then MeWantRevenge.db.profile.AlertWindowNameSize = Default_Profile.profile.AlertWindowNameSize end
-	if MeWantRevenge.db.profile.AlertWindowLocationSize == nil then MeWantRevenge.db.profile.AlertWindowLocationSize = Default_Profile.profile.AlertWindowLocationSize end
-	if MeWantRevenge.db.profile.BarTexture == nil then MeWantRevenge.db.profile.BarTexture = Default_Profile.profile.BarTexture end
-	if MeWantRevenge.db.profile.MainWindowVis == nil then MeWantRevenge.db.profile.MainWindowVis = Default_Profile.profile.MainWindowVis end
-	if MeWantRevenge.db.profile.CurrentList == nil then MeWantRevenge.db.profile.CurrentList = Default_Profile.profile.CurrentList end
-	if MeWantRevenge.db.profile.Locked == nil then MeWantRevenge.db.profile.Locked = Default_Profile.profile.Locked end
-	if MeWantRevenge.db.profile.Font == nil then MeWantRevenge.db.profile.Font = Default_Profile.profile.Font end
-	if MeWantRevenge.db.profile.Scaling == nil then MeWantRevenge.db.profile.Scaling = Default_Profile.profile.Scaling end
-	if MeWantRevenge.db.profile.Enabled == nil then MeWantRevenge.db.profile.Enabled = Default_Profile.profile.Enabled end
-	if MeWantRevenge.db.profile.EnabledInBattlegrounds == nil then MeWantRevenge.db.profile.EnabledInBattlegrounds = Default_Profile.profile.EnabledInBattlegrounds end
-	if MeWantRevenge.db.profile.EnabledInArenas == nil then MeWantRevenge.db.profile.EnabledInArenas = Default_Profile.profile.EnabledInArenas end
-	if MeWantRevenge.db.profile.EnabledInWintergrasp == nil then MeWantRevenge.db.profile.EnabledInWintergrasp = Default_Profile.profile.EnabledInWintergrasp end
-	if MeWantRevenge.db.profile.DisableWhenPVPUnflagged == nil then MeWantRevenge.db.profile.DisableWhenPVPUnflagged = Default_Profile.profile.DisableWhenPVPUnflagged end
-	if MeWantRevenge.db.profile.MinimapDetection == nil then MeWantRevenge.db.profile.MinimapDetection = Default_Profile.profile.MinimapDetection end
-	if MeWantRevenge.db.profile.MinimapDetails == nil then MeWantRevenge.db.profile.MinimapDetails = Default_Profile.profile.MinimapDetails end
-	if MeWantRevenge.db.profile.DisplayOnMap == nil then MeWantRevenge.db.profile.DisplayOnMap = Default_Profile.profile.DisplayOnMap end
-	if MeWantRevenge.db.profile.SwitchToZone == nil then MeWantRevenge.db.profile.SwitchToZone = Default_Profile.profile.SwitchToZone end	
-	if MeWantRevenge.db.profile.MapDisplayLimit == nil then MeWantRevenge.db.profile.MapDisplayLimit = Default_Profile.profile.MapDisplayLimit end
-	if MeWantRevenge.db.profile.DisplayTooltipNearMeWantRevengeWindow == nil then MeWantRevenge.db.profile.DisplayTooltipNearMeWantRevengeWindow = Default_Profile.profile.DisplayTooltipNearMeWantRevengeWindow end	
-	if MeWantRevenge.db.profile.TooltipAnchor == nil then MeWantRevenge.db.profile.TooltipAnchor = Default_Profile.profile.TooltipAnchor end	
-	if MeWantRevenge.db.profile.DisplayWinLossStatistics == nil then MeWantRevenge.db.profile.DisplayWinLossStatistics = Default_Profile.profile.DisplayWinLossStatistics end
-	if MeWantRevenge.db.profile.DisplayKOSReason == nil then MeWantRevenge.db.profile.DisplayKOSReason = Default_Profile.profile.DisplayKOSReason end
-	if MeWantRevenge.db.profile.DisplayLastSeen == nil then MeWantRevenge.db.profile.DisplayLastSeen = Default_Profile.profile.DisplayLastSeen end
-	if MeWantRevenge.db.profile.ShowOnDetection == nil then MeWantRevenge.db.profile.ShowOnDetection = Default_Profile.profile.ShowOnDetection end
-	if MeWantRevenge.db.profile.HideMeWantRevenge == nil then MeWantRevenge.db.profile.HideMeWantRevenge = Default_Profile.profile.HideMeWantRevenge end
---	if MeWantRevenge.db.profile.ShowOnlyPvPFlagged == nil then MeWantRevenge.db.profile.ShowOnlyPvPFlagged = Default_Profile.profile.ShowOnlyPvPFlagged end	
-	if MeWantRevenge.db.profile.ShowKoSButton == nil then MeWantRevenge.db.profile.ShowKoSButton = Default_Profile.profile.ShowKoSButton end	
-	if MeWantRevenge.db.profile.InvertMeWantRevenge == nil then MeWantRevenge.db.profile.InvertMeWantRevenge = Default_Profile.profile.InvertMeWantRevenge end
-	if MeWantRevenge.db.profile.ResizeMeWantRevenge == nil then MeWantRevenge.db.profile.ResizeMeWantRevenge = Default_Profile.profile.ResizeMeWantRevenge end
-	if MeWantRevenge.db.profile.ResizeMeWantRevengeLimit == nil then MeWantRevenge.db.profile.ResizeMeWantRevengeLimit = Default_Profile.profile.ResizeMeWantRevengeLimit end 
-	if MeWantRevenge.db.profile.Announce == nil then MeWantRevenge.db.profile.Announce = Default_Profile.profile.Announce end
-	if MeWantRevenge.db.profile.OnlyAnnounceKoS == nil then MeWantRevenge.db.profile.OnlyAnnounceKoS = Default_Profile.profile.OnlyAnnounceKoS end
-	if MeWantRevenge.db.profile.WarnOnStealth == nil then MeWantRevenge.db.profile.WarnOnStealth = Default_Profile.profile.WarnOnStealth end
-	if MeWantRevenge.db.profile.WarnOnKOS == nil then MeWantRevenge.db.profile.WarnOnKOS = Default_Profile.profile.WarnOnKOS end
-	if MeWantRevenge.db.profile.WarnOnKOSGuild == nil then MeWantRevenge.db.profile.WarnOnKOSGuild = Default_Profile.profile.WarnOnKOSGuild end
-	if MeWantRevenge.db.profile.WarnOnRace == nil then MeWantRevenge.db.profile.WarnOnRace = Default_Profile.profile.WarnOnRace end
-	if MeWantRevenge.db.profile.SelectWarnRace == nil then MeWantRevenge.db.profile.SelectWarnRace = Default_Profile.profile.SelectWarnRace end
-	if MeWantRevenge.db.profile.DisplayWarningsInErrorsFrame == nil then MeWantRevenge.db.profile.DisplayWarningsInErrorsFrame = Default_Profile.profile.DisplayWarningsInErrorsFrame end
-	if MeWantRevenge.db.profile.EnableSound == nil then MeWantRevenge.db.profile.EnableSound = Default_Profile.profile.EnableSound end
-	if MeWantRevenge.db.profile.OnlySoundKoS == nil then MeWantRevenge.db.profile.OnlySoundKoS = Default_Profile.profile.OnlySoundKoS end	
-	if MeWantRevenge.db.profile.StopAlertsOnTaxi == nil then MeWantRevenge.db.profile.StopAlertsOnTaxi = Default_Profile.profile.StopAlertsOnTaxi end 	
-	if MeWantRevenge.db.profile.RemoveUndetected == nil then MeWantRevenge.db.profile.RemoveUndetected = Default_Profile.profile.RemoveUndetected end
-	if MeWantRevenge.db.profile.ShowNearbyList == nil then MeWantRevenge.db.profile.ShowNearbyList = Default_Profile.profile.ShowNearbyList end
-	if MeWantRevenge.db.profile.PrioritiseKoS == nil then MeWantRevenge.db.profile.PrioritiseKoS = Default_Profile.profile.PrioritiseKoS end
-	if MeWantRevenge.db.profile.PurgeData == nil then MeWantRevenge.db.profile.PurgeData = Default_Profile.profile.PurgeData end
-	if MeWantRevenge.db.profile.PurgeKoS == nil then MeWantRevenge.db.profile.PurgeKoS = Default_Profile.profile.PurgeKoSData end	
-	if MeWantRevenge.db.profile.PurgeWinLossData == nil then MeWantRevenge.db.profile.PurgeWinLossData = Default_Profile.profile.PurgeWinLossData end	
-	if MeWantRevenge.db.profile.ShareData == nil then MeWantRevenge.db.profile.ShareData = Default_Profile.profile.ShareData end
-	if MeWantRevenge.db.profile.UseData == nil then MeWantRevenge.db.profile.UseData = Default_Profile.profile.UseData end
-	if MeWantRevenge.db.profile.ShareKOSBetweenCharacters == nil then MeWantRevenge.db.profile.ShareKOSBetweenCharacters = Default_Profile.profile.ShareKOSBetweenCharacters end
-	if MeWantRevenge.db.profile.AppendUnitNameCheck == nil then MeWantRevenge.db.profile.AppendUnitNameCheck = Default_Profile.profile.AppendUnitNameCheck end
-	if MeWantRevenge.db.profile.AppendUnitKoSCheck == nil then MeWantRevenge.db.profile.AppendUnitKoSCheck = Default_Profile.profile.AppendUnitKoSCheck end	]]--
 end
 
 function MeWantRevenge:OnInitialize()
@@ -1676,8 +1549,8 @@ function MeWantRevenge:OnInitialize()
 		["NightElf"] = true,
 		["Scourge"] = true,		
 		["Gnome"] = true,
---		["BloodElf"] = true,		
---		["Draenei"] = true,
+		["BloodElf"] = true,		
+		["Draenei"] = true,
 --		["Goblin"] = true,		
 --		["Worgen"] = true,
 --		["Pandaren"] = true,
@@ -1696,9 +1569,7 @@ function MeWantRevenge:OnInitialize()
     local AceDB = LibStub:GetLibrary("AceDB-3.0")
 
     MeWantRevenge.db = AceDB:New("MeWantRevengeDB", Default_Profile)
-    print("slt")
     MeWantRevenge:CheckDatabase()
-    print("slt")
     --MeWantRevenge.db.RegisterCallback(MeWantRevenge, "OnNewProfile", "ResetProfile")
     MeWantRevenge.db.RegisterCallback(MeWantRevenge, "OnNewProfile", "HandleProfileChanges")
     --MeWantRevenge.db.RegisterCallback(MeWantRevenge, "OnProfileReset", "ResetProfile")
@@ -1706,4 +1577,8 @@ function MeWantRevenge:OnInitialize()
     MeWantRevenge.db.RegisterCallback(MeWantRevenge, "OnProfileChanged", "HandleProfileChanges")
     MeWantRevenge.db.RegisterCallback(MeWantRevenge, "OnProfileCopied", "HandleProfileChanges")
     MeWantRevenge:SetupOptions()
+
+	----------------------------------------------
+	-- WINDOW TEST
+	MeWantRevenge:CreateFrame("MeWantRevenge_MainWindow", "MeWantRevenge", 200, 300, nil, nil)
 end

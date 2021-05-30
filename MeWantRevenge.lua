@@ -15,6 +15,9 @@ end
 
 -------------------------------MeWantRevenge Code-------------------------------[[
 local AceGUI = LibStub("AceGUI-3.0")
+local AceLocale = LibStub("AceLocale-3.0")
+local L = AceLocale:GetLocale("MeWantRevenge")
+local _
 
 local guids = {}
 --------- CreateFrame 4th argument can be a comma-separated list of XML templates!
@@ -26,9 +29,7 @@ MeWantRevengeWindow:SetHeight(300)
 local logo = AceGUI:Create("Label")
 logo:SetImage("Interface\\Addons\\MeWantRevenge\\resources\\logo.tga")
 logo:SetImageSize(150, 150)
-local egg = MeWantRevengeWindow:AddChild(logo)
-print(egg)
-print(logo:GetPoint())
+MeWantRevengeWindow:AddChild(logo)
 
 local editbox = AceGUI:Create("EditBox")
 editbox:SetLabel("Insert text:")
