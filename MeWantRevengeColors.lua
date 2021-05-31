@@ -223,7 +223,6 @@ function Colors:RegisterBorder(Branch, Name, frame)
 	else
 		frame:SetBackdropBorderColor(c.r, c.g, c.b)
 	end
-	print("le miam")
 
 	if type(ItemsToUpdate[Branch]) ~= "table" then
 		ItemsToUpdate[Branch] = {}
@@ -364,3 +363,5 @@ function Colors:Debug()
 		end
 	end
 end
+
+print("Colors initialized.")

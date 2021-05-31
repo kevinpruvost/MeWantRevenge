@@ -41,7 +41,7 @@ function MeWantRevenge:CreateFrame(Name, Title, Height, Width, ShowFunc, HideFun
 	
 	theFrame.Background = theFrame:CreateTexture(nil, "BACKGROUND")	
 	theFrame.Background:ClearAllPoints()
-	theFrame.Background:SetTexture("Interface\\CHARACTERFRAME\\UI-Party-Background")
+	theFrame.Background:SetTexture("Interface\\Addons\\MeWantRevenge\\Resources\\background")
 	if not MeWantRevenge.db.profile.InvertMeWantRevenge then
 		theFrame.Background:SetPoint("TOPLEFT", theFrame, "TOPLEFT", 0, -32)
 		theFrame.Background:SetPoint("BOTTOMRIGHT", theFrame, "BOTTOMRIGHT", 0, 2)	
@@ -51,7 +51,7 @@ function MeWantRevenge:CreateFrame(Name, Title, Height, Width, ShowFunc, HideFun
 	end
 	theFrame.Background:SetHeight(Height)
 	theFrame.Background:SetWidth(Width)	
-	theFrame.Background:SetAlpha(1)
+	theFrame.Background:SetAlpha(0.8)
 
     MeWantRevenge.Colors:RegisterBorder(
         Name == "MeWantRevenge_MainWindow" and "Window" or "Other Windows",
@@ -78,19 +78,18 @@ function MeWantRevenge:CreateFrame(Name, Title, Height, Width, ShowFunc, HideFun
 	})
 	theFrame.TitleBar:SetBackdropColor(0,0,0,1) 
 	theFrame.TitleBar:SetBackdropBorderColor(1,1,1,1)
-	print("border")
 
-	theFrame.Title = theFrame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+	theFrame.Title = theFrame:CreateFontString(theFrame, "OVERLAY", "GameFontNormal")
 	if not MeWantRevenge.db.profile.InvertMeWantRevenge then 	
 		theFrame.Title:SetPoint("TOPLEFT", theFrame, "TOPLEFT", 8, -16)
 	else
 		theFrame.Title:SetPoint("BOTTOMLEFT", theFrame, "BOTTOMLEFT", 8, -15)
 	end	
+	MeWantRevenge:AddFontString(theFrame.Title)
 	theFrame.Title:SetJustifyH("LEFT")
 	theFrame.Title:SetTextColor(1.0, 1.0, 1.0, 1.0)
 	theFrame.Title:SetText(Title)
 	theFrame.Title:SetHeight(MeWantRevenge.db.profile.MainWindow.TextHeight)
-	MeWantRevenge:AddFontString(theFrame.Title)
 
 	if Name == "MeWantRevenge_MainWindow" then
 		MeWantRevenge.Colors:UnregisterItem(theFrame.Title)

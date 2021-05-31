@@ -18,8 +18,8 @@ Locales\MeWantRevenge-frFR.lua
 ##################################
 # Main code
 MeWantRevengeOptions.lua
-MeWantRevengeColors.lua
 MeWantRevengeFonts.lua
+MeWantRevengeColors.lua
 MeWantRevengeFrames.lua
 
 MeWantRevenge.lua

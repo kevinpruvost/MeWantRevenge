@@ -74,6 +74,17 @@ function MeWantRevenge_OnLoad()
     MeWantRevengeWindow:RegisterEvent("UNIT_PHASE")
     MeWantRevengeWindow:RegisterEvent("UNIT_TARGETABLE_CHANGED")
     
+	----------------------------------------------
+	-- WINDOW TEST
+	local frame = MeWantRevenge:CreateFrame("MeWantRevenge_MainWindow", "MeWantRevenge", 200, 300, nil, nil)
+	frame:SetResizable(true)
+	frame:SetMinResize(90, 34)
+	frame:SetMaxResize(300, 264)
+
+	frame:SetMovable(true)
+    frame:EnableMouseWheel(true)
+	print("Frame configured")
+
     print("MeWantRevenge loaded.")
 end
 
