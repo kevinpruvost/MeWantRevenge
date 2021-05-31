@@ -1580,5 +1580,12 @@ function MeWantRevenge:OnInitialize()
 
 	----------------------------------------------
 	-- WINDOW TEST
-	MeWantRevenge:CreateFrame("MeWantRevenge_MainWindow", "MeWantRevenge", 200, 300, nil, nil)
+	local frame = MeWantRevenge:CreateFrame("MeWantRevenge_MainWindow", "MeWantRevenge", 200, 300, nil, nil)
+	frame:SetResizable(true)
+	frame:SetMinResize(90, 34)
+	frame:SetMaxResize(300, 264)
+
+	frame:SetMovable(true)
+    frame:EnableMouseWheel(true)
+	print("Frame configured")
 end

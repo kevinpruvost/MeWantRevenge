@@ -1,8 +1,8 @@
 function MeWantRevenge:CreateFrame(Name, Title, Height, Width, ShowFunc, HideFunc)
-	local theFrame = CreateFrame("Frame", Name, UIParent)
+	local theFrame = CreateFrame("Frame", Name, UIParent, "BackdropTemplate")
 
 	theFrame:ClearAllPoints()
-	theFrame:SetPoint("CENTER", UIParent)
+	theFrame:SetPoint("TOP", UIParent)
 	theFrame:SetHeight(Height)
 	theFrame:SetWidth(Width)
 	theFrame:EnableMouse(true)
@@ -53,18 +53,14 @@ function MeWantRevenge:CreateFrame(Name, Title, Height, Width, ShowFunc, HideFun
 	theFrame.Background:SetWidth(Width)	
 	theFrame.Background:SetAlpha(1)
 
-    --[[
-    BACKDROPS REMOVED on Patch 9.0.1
-
     MeWantRevenge.Colors:RegisterBorder(
         Name == "MeWantRevenge_MainWindow" and "Window" or "Other Windows",
         "Title", theFrame)
     MeWantRevenge.Colors:RegisterBackground(
         Name == "MeWantRevenge_MainWindow" and "Window" or "Other Windows", 
         "Background", theFrame)
-    ]]
 
-	theFrame.TitleBar = CreateFrame("Frame", "TestFrame", theFrame)	
+	theFrame.TitleBar = CreateFrame("Frame", "TestFrame", theFrame, "BackdropTemplate")	
 	theFrame.TitleBar:SetFrameStrata("BACKGROUND")
 	if not MeWantRevenge.db.profile.InvertMeWantRevenge then	
 		theFrame.TitleBar:SetPoint("TOPLEFT", theFrame, "TOPLEFT", 0, -11)
@@ -74,9 +70,7 @@ function MeWantRevenge:CreateFrame(Name, Title, Height, Width, ShowFunc, HideFun
 		theFrame.TitleBar:SetPoint("BOTTOMRIGHT", theFrame, "BOTTOMRIGHT", 0, -21)
 	end
 	theFrame.TitleBar:SetHeight(22)
-    --[[
-    BACKDROPS REMOVED on Patch 9.0.1
-    
+
     theFrame.TitleBar:SetBackdrop({
 		bgFile = "Interface\\Tooltips\\UI-Tooltip-Background", tile = true, tileSize = 8,
 		edgeFile = "Interface\\Tooltips\\UI-Tooltip-Border", edgeSize = 12,			
@@ -84,7 +78,7 @@ function MeWantRevenge:CreateFrame(Name, Title, Height, Width, ShowFunc, HideFun
 	})
 	theFrame.TitleBar:SetBackdropColor(0,0,0,1) 
 	theFrame.TitleBar:SetBackdropBorderColor(1,1,1,1)
-    ]]
+	print("border")
 
 	theFrame.Title = theFrame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
 	if not MeWantRevenge.db.profile.InvertMeWantRevenge then 	

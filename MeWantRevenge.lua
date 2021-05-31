@@ -77,5 +77,5 @@ function MeWantRevenge_OnLoad()
     print("MeWantRevenge loaded.")
 end
 
---MeWantRevengeWindow:Hide()
+MeWantRevengeWindow:Hide()
 -------------------------------MeWantRevenge Code-------------------------------]]
